@@ -93,95 +93,58 @@ export default function Home() {
       </header>
 
       <main className="relative mx-auto w-full max-w-6xl px-6 pb-20 pt-24">
-        <section className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr]">
-          <div className="space-y-8">
-            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-emerald-700">
+        <section className="flex min-h-[calc(100vh-72px)] flex-col items-center justify-center gap-10 text-center">
+          <div className="space-y-5">
+            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-emerald-700">
               AI Screening Retinopati
-            </div>
-            <div className="space-y-5">
-              <h1 className="text-4xl font-[var(--font-display)] leading-tight text-slate-900 sm:text-5xl">
-                Deteksi dini retinopati yang tenang, cepat, dan terstruktur.
-              </h1>
-              <p className="max-w-xl text-lg text-slate-600">
-                Satu halaman untuk membantu klinik memeriksa citra retina, merangkum
-                tingkat risiko, dan menyiapkan rekomendasi tindak lanjut.
-              </p>
-            </div>
-            <div className="flex flex-wrap items-center gap-4">
-              <a
-                href="#upload"
-                className="rounded-full bg-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-700"
+            </p>
+            <h1 className="mx-auto max-w-3xl text-4xl font-[var(--font-display)] leading-tight text-slate-900 sm:text-5xl">
+              Deteksi dini retinopati yang lebih sederhana.
+            </h1>
+            <p className="mx-auto max-w-2xl text-base text-slate-600 sm:text-lg">
+              Bantu klinik merangkum risiko dan menyiapkan rekomendasi tindak lanjut
+              dengan alur yang tenang dan terstruktur.
+            </p>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <a
+              href="#upload"
+              className="rounded-full bg-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-700"
+            >
+              Mulai Analisis
+            </a>
+            <a
+              href="#cara-kerja"
+              className="rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-400"
+            >
+              Lihat Cara Kerja
+            </a>
+            <span className="text-xs text-slate-500">
+              Versi demo, tidak menyimpan data pasien.
+            </span>
+          </div>
+          <div className="grid w-full max-w-3xl gap-4 sm:grid-cols-3">
+            {stats.map((item) => (
+              <div
+                key={item.label}
+                className="rounded-2xl border border-slate-200 bg-white/80 px-4 py-5 shadow-sm"
               >
-                Mulai Analisis
-              </a>
-              <a
-                href="#cara-kerja"
-                className="rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-400"
-              >
-                Lihat Cara Kerja
-              </a>
-              <span className="text-xs text-slate-500">
-                Versi demo, tidak menyimpan data pasien.
-              </span>
-            </div>
-            <div className="grid gap-6 sm:grid-cols-3">
-              {stats.map((item) => (
-                <div
-                  key={item.label}
-                  className="rounded-2xl border border-slate-200 bg-white/80 px-4 py-5 shadow-sm"
-                >
-                  <p className="text-2xl font-semibold text-slate-900">{item.value}</p>
-                  <p className="mt-1 text-xs uppercase tracking-[0.2em] text-slate-500">
-                    {item.label}
-                  </p>
-                </div>
-              ))}
-            </div>
+                <p className="text-2xl font-semibold text-slate-900">{item.value}</p>
+                <p className="mt-1 text-xs uppercase tracking-[0.2em] text-slate-500">
+                  {item.label}
+                </p>
+              </div>
+            ))}
           </div>
 
-          <div className="relative">
-            <div className="absolute -right-6 top-12 h-40 w-40 rounded-full bg-emerald-100/70 blur-2xl" />
-            <div className="relative rounded-3xl border border-emerald-100 bg-white/90 p-6 shadow-lg">
-              <div className="flex items-center justify-between">
-                <p className="text-sm font-semibold text-slate-700">Ringkasan Analisis</p>
-                <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
-                  Ready
-                </span>
-              </div>
-              <div className="mt-6 space-y-4">
-                <div>
-                  <p className="text-xs uppercase tracking-[0.2em] text-slate-400">
-                    Risiko utama
-                  </p>
-                  <p className="text-xl font-semibold text-slate-900">
-                    Diabetic Retinopathy - Moderate
-                  </p>
-                </div>
-                <div className="rounded-2xl bg-slate-50 p-4">
-                  <div className="flex items-center justify-between text-sm text-slate-600">
-                    <span>Confidence</span>
-                    <span className="font-semibold text-slate-900">0.86</span>
-                  </div>
-                  <div className="mt-3 h-2 w-full rounded-full bg-slate-200">
-                    <div className="h-2 w-[86%] rounded-full bg-emerald-500" />
-                  </div>
-                </div>
-                <div className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-600">
-                  <p className="font-semibold text-slate-900">Saran tindak lanjut</p>
-                  <p className="mt-1">
-                    Rujuk ke spesialis retina dan jadwalkan pemeriksaan 2 minggu.
-                  </p>
-                </div>
-                <div className="flex items-center justify-between text-xs text-slate-500">
-                  <span>Waktu proses</span>
-                  <span>2.4 detik</span>
-                </div>
-              </div>
-            </div>
+          <div className="relative flex w-full max-w-2xl flex-wrap items-center justify-center gap-5 rounded-3xl border border-emerald-100 bg-white/80 px-6 py-5 text-xs uppercase tracking-[0.25em] text-emerald-700 shadow-sm">
+            <span>Real-time AI</span>
+            <span>Secure Workflow</span>
+            <span>Clinical Ready</span>
           </div>
         </section>
 
-        <section id="fitur" className="mt-20">
+        <section id="fitur" className="mt-14">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-700">
