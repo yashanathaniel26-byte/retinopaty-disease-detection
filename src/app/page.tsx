@@ -1,25 +1,9 @@
+import FeatureWobbleCards from "@/components/FeatureWobbleCards";
+
 const stats = [
   { label: "Akurasi validasi", value: "94.2%" },
   { label: "Kondisi terdeteksi", value: "19 kelas" },
   { label: "Waktu analisis", value: "< 3 detik" },
-];
-
-const features = [
-  {
-    title: "Screening cepat",
-    description:
-      "Unggah citra retina dan dapatkan ringkasan risiko dengan waktu respons singkat.",
-  },
-  {
-    title: "Metode transparan",
-    description:
-      "Skor probabilitas dan catatan klinis diringkas agar mudah dipahami tim medis.",
-  },
-  {
-    title: "Privasi terjaga",
-    description:
-      "Data pasien diproses secara lokal dan hanya hasil agregat yang ditampilkan.",
-  },
 ];
 
 const steps = [
@@ -159,19 +143,8 @@ export default function Home() {
               sistematis tanpa mengorbankan kejelasan.
             </p>
           </div>
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {features.map((feature) => (
-              <div
-                key={feature.title}
-                className="rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-sm"
-              >
-                <div className="mb-4 h-10 w-10 rounded-2xl bg-emerald-50" />
-                <h3 className="text-lg font-semibold text-slate-900">
-                  {feature.title}
-                </h3>
-                <p className="mt-2 text-sm text-slate-600">{feature.description}</p>
-              </div>
-            ))}
+          <div className="mt-10">
+            <FeatureWobbleCards />
           </div>
         </section>
 
