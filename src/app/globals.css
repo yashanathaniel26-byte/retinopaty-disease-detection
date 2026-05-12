@@ -135,3 +135,21 @@ body {
     @apply font-sans;
   }
 }
+
+@layer utilities {
+  .scroller {
+    --animation-direction: forwards;
+    --animation-duration: 40s;
+  }
+
+  .animate-scroll {
+    animation: scroll var(--animation-duration) linear infinite;
+    animation-direction: var(--animation-direction);
+  }
+
+  @keyframes scroll {
+    to {
+      transform: translate(calc(-50% - 0.5rem));
+    }
+  }
+}
