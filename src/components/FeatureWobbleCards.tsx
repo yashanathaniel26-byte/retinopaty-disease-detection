@@ -100,6 +100,7 @@ export default function FeatureWobbleCards() {
       {featureCards.map(({ title, description, Icon }) => (
         <motion.div
           key={title}
+          className="h-full"
           variants={{
             hidden: { opacity: 0, y: 14 },
             show: {
@@ -110,8 +111,8 @@ export default function FeatureWobbleCards() {
           }}
         >
           <WobbleCard
-            containerClassName="min-h-[220px]"
-            className="px-6 py-10"
+            containerClassName="min-h-[240px] h-full"
+            className="flex h-full flex-col px-6 py-10"
           >
             <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-700">
               <Icon className="h-5 w-5" />

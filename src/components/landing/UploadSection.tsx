@@ -21,6 +21,7 @@ const API_URL =
 const ALLOWED_MIME_TYPES = new Set(["image/jpeg", "image/png", "image/jpg"]);
 const ALLOWED_EXTENSIONS = [".jpg", ".jpeg", ".png"];
 const MAX_FILE_SIZE_BYTES = 10 * 1024 * 1024;
+const LOW_CONFIDENCE_THRESHOLD = 0.8;
 
 const RECOMMENDATIONS: Record<string, string> = {
   normal: "Tidak ditemukan temuan mencurigakan. Lanjutkan pemeriksaan rutin.",
@@ -239,49 +240,59 @@ export default function UploadSection() {
           ) : null}
           {result ? (
             <div className="mt-4 rounded-2xl border border-emerald-200 bg-emerald-50/70 px-4 py-4 text-sm text-emerald-900">
-              <div className="flex flex-wrap items-center justify-between gap-2">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">
-                    Hasil Prediksi
-                  </p>
-                  <p className="mt-1 text-lg font-semibold text-emerald-900">
-                    {formatLabel(result.label)}
-                  </p>
+              {result.confidence < LOW_CONFIDENCE_THRESHOLD ? (
+                <div className="mb-3 rounded-xl border border-amber-200 bg-amber-50 px-3 py-3 text-sm text-amber-800">
+                  Sepertinya kamu mengupload gambar yang salah. Input harus berupa
+                  fundus image agar hasilnya akurat.
                 </div>
-                <div className="text-right text-emerald-900">
-                  <p className="text-xs uppercase tracking-[0.2em]">Persentase</p>
-                  <p className="text-lg font-semibold">
-                    {(result.confidence * 100).toFixed(2)}%
-                  </p>
-                </div>
-              </div>
-              <div className="mt-3 rounded-xl bg-white/80 px-3 py-3 text-sm text-slate-700">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">
-                  Rekomendasi
-                </p>
-                <p className="mt-1">
-                  {RECOMMENDATIONS[result.label] ??
-                    "Disarankan konsultasi lanjutan dengan tenaga medis."}
-                </p>
-                <div className="mt-2 text-xs text-slate-500">
-                  Waktu inferensi: {inferenceTime ?? "-"}
-                </div>
-              </div>
-              <div className="mt-3 grid gap-2">
-                {result.top_5.map((item) => (
-                  <div
-                    key={`${item.label}-${item.class_index}`}
-                    className="flex items-center justify-between rounded-xl bg-white/80 px-3 py-2"
-                  >
-                    <span className="text-sm text-slate-700">
-                      {formatLabel(item.label)}
-                    </span>
-                    <span className="text-sm font-semibold text-emerald-800">
-                      {(item.confidence * 100).toFixed(2)}%
-                    </span>
+              ) : null}
+              {result.confidence >= LOW_CONFIDENCE_THRESHOLD ? (
+                <>
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">
+                        Hasil Prediksi
+                      </p>
+                      <p className="mt-1 text-lg font-semibold text-emerald-900">
+                        {formatLabel(result.label)}
+                      </p>
+                    </div>
+                    <div className="text-right text-emerald-900">
+                      <p className="text-xs uppercase tracking-[0.2em]">Persentase</p>
+                      <p className="text-lg font-semibold">
+                        {(result.confidence * 100).toFixed(2)}%
+                      </p>
+                    </div>
                   </div>
-                ))}
-              </div>
+                  <div className="mt-3 rounded-xl bg-white/80 px-3 py-3 text-sm text-slate-700">
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">
+                      Rekomendasi
+                    </p>
+                    <p className="mt-1">
+                      {RECOMMENDATIONS[result.label] ??
+                        "Disarankan konsultasi lanjutan dengan tenaga medis."}
+                    </p>
+                    <div className="mt-2 text-xs text-slate-500">
+                      Waktu inferensi: {inferenceTime ?? "-"}
+                    </div>
+                  </div>
+                  <div className="mt-3 grid gap-2">
+                    {result.top_5.map((item) => (
+                      <div
+                        key={`${item.label}-${item.class_index}`}
+                        className="flex items-center justify-between rounded-xl bg-white/80 px-3 py-2"
+                      >
+                        <span className="text-sm text-slate-700">
+                          {formatLabel(item.label)}
+                        </span>
+                        <span className="text-sm font-semibold text-emerald-800">
+                          {(item.confidence * 100).toFixed(2)}%
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </>
+              ) : null}
             </div>
           ) : null}
         </div>
