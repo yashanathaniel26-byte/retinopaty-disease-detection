@@ -239,12 +239,18 @@ export default function UploadSection() {
             </div>
           ) : null}
           {result ? (
-            <div className="mt-4 rounded-2xl border border-emerald-200 bg-emerald-50/70 px-4 py-4 text-sm text-emerald-900">
+            <div
+              className={`mt-4 rounded-2xl border px-4 py-4 text-sm ${
+                result.confidence < LOW_CONFIDENCE_THRESHOLD
+                  ? "border-amber-200 bg-amber-50/70 text-amber-900"
+                  : "border-emerald-200 bg-emerald-50/70 text-emerald-900"
+              }`}
+            >
               {result.confidence < LOW_CONFIDENCE_THRESHOLD ? (
-                <div className="mb-3 rounded-xl border border-amber-200 bg-amber-50 px-3 py-3 text-sm text-amber-800">
+                <p className="mb-1 text-sm text-amber-800">
                   Sepertinya kamu mengupload gambar yang salah. Input harus berupa
                   fundus image agar hasilnya akurat.
-                </div>
+                </p>
               ) : null}
               {result.confidence >= LOW_CONFIDENCE_THRESHOLD ? (
                 <>
