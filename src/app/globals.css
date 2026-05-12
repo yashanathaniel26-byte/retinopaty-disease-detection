@@ -90,6 +90,14 @@ body {
   font-family: var(--font-body), "DM Sans", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 200px;
+}
+
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
