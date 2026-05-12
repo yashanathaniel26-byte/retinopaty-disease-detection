@@ -17,7 +17,7 @@ export default function TestimonialsSection({
 }: TestimonialsSectionProps) {
   return (
     <section
-      className="relative left-1/2 right-1/2 mt-16 w-screen -mx-[50vw]"
+      className="relative left-1/2 right-1/2 mt-10 w-screen -mx-[50vw]"
       aria-label="Testimoni"
     >
 
