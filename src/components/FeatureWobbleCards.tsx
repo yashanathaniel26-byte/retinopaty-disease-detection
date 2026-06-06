@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "motion/react";
-
 import { WobbleCard } from "@/components/ui/wobble-card";
 
 const featureCards = [
@@ -85,7 +84,7 @@ function SecureShieldIcon({ className }: { className?: string }) {
 export default function FeatureWobbleCards() {
   return (
     <motion.div
-      className="grid gap-6 md:grid-cols-3"
+      className="grid gap-4 sm:gap-6 sm:grid-cols-2 md:grid-cols-3"
       initial="hidden"
       animate="show"
       variants={{
@@ -111,16 +110,16 @@ export default function FeatureWobbleCards() {
           }}
         >
           <WobbleCard
-            containerClassName="min-h-[240px] h-full"
-            className="flex h-full flex-col px-6 py-10"
+            containerClassName="min-h-[200px] h-full sm:min-h-[240px]"
+            className="flex h-full flex-col px-5 py-8 sm:px-6 sm:py-10"
           >
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-700">
+            <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-700">
               <Icon className="h-5 w-5" />
             </div>
-            <h3 className="mt-6 text-lg font-semibold text-slate-900">
+            <h3 className="mt-4 text-base font-semibold text-slate-900 sm:mt-6 sm:text-lg">
               {title}
             </h3>
-            <p className="mt-3 text-sm text-slate-600">{description}</p>
+            <p className="mt-2 text-sm text-slate-600">{description}</p>
           </WobbleCard>
         </motion.div>
       ))}

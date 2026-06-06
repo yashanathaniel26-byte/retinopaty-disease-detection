@@ -16,7 +16,7 @@ export default function Home() {
 
       <SiteHeader />
 
-      <main className="relative mx-auto w-full max-w-6xl px-6 pb-20 pt-24">
+      <main className="relative mx-auto w-full max-w-6xl px-4 pb-16 pt-20 sm:px-6 sm:pb-20 sm:pt-24">
         <HeroSection stats={stats} />
 
         <TestimonialsSection testimonials={testimonials} />

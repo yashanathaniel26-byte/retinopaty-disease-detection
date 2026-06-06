@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 type Prediction = {
   class_index: number;
@@ -69,6 +70,9 @@ export default function UploadSection() {
   const [result, setResult] = useState<PredictResponse | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [inferenceTime, setInferenceTime] = useState<string | null>(null);
+
+  const { ref: headRef, isVisible: headVisible } = useScrollReveal();
+  const { ref: cardRef, isVisible: cardVisible } = useScrollReveal({ threshold: 0.08 });
 
   const filePreview = useMemo(() => {
     if (!selectedFile) return null;
@@ -152,25 +156,34 @@ export default function UploadSection() {
   };
 
   return (
-    <section id="upload" className="mt-20">
-      <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-        <div className="space-y-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-700">
+    <section id="upload" className="mt-16 sm:mt-20">
+      <div className="grid gap-6 sm:gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+        {/* Left: info */}
+        <div
+          ref={headRef}
+          className={`reveal reveal-left space-y-3 sm:space-y-4 ${headVisible ? "visible" : ""}`}
+        >
+          <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-emerald-700 sm:text-xs">
             Upload Citra
           </p>
-          <h2 className="text-3xl font-[var(--font-display)] text-slate-900">
+          <h2 className="text-2xl font-[var(--font-display)] text-slate-900 sm:text-3xl">
             Unggah file untuk memulai screening.
           </h2>
           <p className="text-sm text-slate-600">
             Gunakan file retina yang jelas. Data hanya dipakai untuk analisis
             instan dan tidak disimpan.
           </p>
-          <div className="rounded-2xl border border-emerald-100 bg-emerald-50/60 p-4 text-sm text-emerald-900">
+          <div className="rounded-xl border border-emerald-100 bg-emerald-50/60 p-3 text-sm text-emerald-900 sm:rounded-2xl sm:p-4">
             Tips: pastikan pencahayaan merata dan fokus pada area retina.
           </div>
         </div>
-        <div className="rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-sm">
-          <div className="rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-6 text-center transition duration-300 hover:-translate-y-0.5 hover:border-emerald-300 hover:bg-emerald-50/60 hover:shadow-lg">
+
+        {/* Right: upload card */}
+        <div
+          ref={cardRef}
+          className={`reveal reveal-right reveal-delay-150 rounded-2xl border border-slate-200 bg-white/90 p-4 shadow-sm sm:rounded-3xl sm:p-6 ${cardVisible ? "visible" : ""}`}
+        >
+          <div className="rounded-xl border border-dashed border-slate-300 bg-slate-50 p-5 text-center transition duration-300 hover:-translate-y-0.5 hover:border-emerald-300 hover:bg-emerald-50/60 hover:shadow-lg sm:rounded-2xl sm:p-6">
             {filePreview ? (
               <button
                 type="button"
@@ -181,7 +194,7 @@ export default function UploadSection() {
                 <img
                   alt="Preview retina"
                   src={filePreview}
-                  className="h-56 w-full object-cover transition duration-300 group-hover:scale-[1.02]"
+                  className="h-48 w-full object-cover transition duration-300 group-hover:scale-[1.02] sm:h-56"
                 />
                 <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-slate-900/30 text-xs font-semibold uppercase tracking-[0.3em] text-white opacity-0 transition duration-300 group-hover:opacity-100">
                   <div className="flex items-center gap-2">
@@ -210,10 +223,10 @@ export default function UploadSection() {
                 <p className="text-sm font-semibold text-slate-700 transition duration-200 group-hover:text-emerald-700">
                   Seret file atau pilih dari perangkat
                 </p>
-                <p className="mt-2 text-xs text-slate-500 transition duration-200 group-hover:text-emerald-600">
+                <p className="mt-1.5 text-xs text-slate-500 transition duration-200 group-hover:text-emerald-600">
                   JPEG, PNG hingga 10MB
                 </p>
-                <div className="mt-4 w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-600 transition duration-200 group-hover:border-emerald-300 group-hover:bg-emerald-50/50">
+                <div className="mt-3 w-full rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-sm text-slate-600 transition duration-200 group-hover:border-emerald-300 group-hover:bg-emerald-50/50 sm:mt-4">
                   Pilih file gambar
                 </div>
                 <input
@@ -226,21 +239,24 @@ export default function UploadSection() {
               </label>
             )}
           </div>
+
           <button
             onClick={handleAnalyze}
             disabled={!selectedFile || isLoading}
-            className="mt-6 w-full rounded-2xl bg-emerald-600 py-3 text-sm font-semibold text-white transition hover:bg-emerald-700 disabled:cursor-not-allowed disabled:opacity-60"
+            className="mt-4 w-full rounded-xl bg-emerald-600 py-3 text-sm font-semibold text-white transition hover:bg-emerald-700 disabled:cursor-not-allowed disabled:opacity-60 sm:mt-6 sm:rounded-2xl"
           >
             {isLoading ? "Menganalisis..." : "Mulai Analisis"}
           </button>
+
           {errorMessage ? (
-            <div className="mt-4 rounded-2xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-700">
+            <div className="mt-3 rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-700 sm:mt-4 sm:rounded-2xl">
               {errorMessage}
             </div>
           ) : null}
+
           {result ? (
             <div
-              className={`mt-4 rounded-2xl border px-4 py-4 text-sm ${
+              className={`mt-3 rounded-xl border px-4 py-4 text-sm sm:mt-4 sm:rounded-2xl ${
                 result.confidence < LOW_CONFIDENCE_THRESHOLD
                   ? "border-amber-200 bg-amber-50/70 text-amber-900"
                   : "border-emerald-200 bg-emerald-50/70 text-emerald-900"
@@ -256,22 +272,22 @@ export default function UploadSection() {
                 <>
                   <div className="flex flex-wrap items-center justify-between gap-2">
                     <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">
+                      <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 sm:text-xs">
                         Hasil Prediksi
                       </p>
-                      <p className="mt-1 text-lg font-semibold text-emerald-900">
+                      <p className="mt-1 text-base font-semibold text-emerald-900 sm:text-lg">
                         {formatLabel(result.label)}
                       </p>
                     </div>
                     <div className="text-right text-emerald-900">
-                      <p className="text-xs uppercase tracking-[0.2em]">Persentase</p>
-                      <p className="text-lg font-semibold">
+                      <p className="text-[10px] uppercase tracking-[0.2em] sm:text-xs">Persentase</p>
+                      <p className="text-base font-semibold sm:text-lg">
                         {(result.confidence * 100).toFixed(2)}%
                       </p>
                     </div>
                   </div>
                   <div className="mt-3 rounded-xl bg-white/80 px-3 py-3 text-sm text-slate-700">
-                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">
+                    <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 sm:text-xs">
                       Rekomendasi
                     </p>
                     <p className="mt-1">
@@ -282,16 +298,16 @@ export default function UploadSection() {
                       Waktu inferensi: {inferenceTime ?? "-"}
                     </div>
                   </div>
-                  <div className="mt-3 grid gap-2">
+                  <div className="mt-3 grid gap-1.5 sm:gap-2">
                     {result.top_5.map((item) => (
                       <div
                         key={`${item.label}-${item.class_index}`}
                         className="flex items-center justify-between rounded-xl bg-white/80 px-3 py-2"
                       >
-                        <span className="text-sm text-slate-700">
+                        <span className="text-xs text-slate-700 sm:text-sm">
                           {formatLabel(item.label)}
                         </span>
-                        <span className="text-sm font-semibold text-emerald-800">
+                        <span className="text-xs font-semibold text-emerald-800 sm:text-sm">
                           {(item.confidence * 100).toFixed(2)}%
                         </span>
                       </div>
