@@ -14,12 +14,12 @@ COPY --from=builder /install /usr/local
 COPY backend/app/ ./app/
 COPY models/ ./models/
 
-RUN adduser --disabled-password appuser
+RUN useradd -m -u 1000 appuser
 USER appuser
 
-EXPOSE 8000
+EXPOSE 7860
 
 HEALTHCHECK --interval=30s --timeout=5s --retries=3 \
-  CMD python -c "import urllib.request, sys;\n\nurl='http://localhost:8000/health';\n\ntry:\n  urllib.request.urlopen(url, timeout=3).read();\n  sys.exit(0)\nexcept Exception:\n  sys.exit(1)"
+  CMD python -c "import urllib.request, sys;\n\nurl='http://localhost:7860/health';\n\ntry:\n  urllib.request.urlopen(url, timeout=3).read();\n  sys.exit(0)\nexcept Exception:\n  sys.exit(1)"
 
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "7860"]
