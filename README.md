@@ -398,22 +398,24 @@ npm run build
 # Deploy to Vercel
 ```
 
-#### AWS/GCP/Azure (Backend)
-- Use Docker image
-- Set up environment variables
-- Configure API gateway
-- Set up monitoring
+#### Hugging Face Spaces (Backend)
+Backend saat ini dideploy dan berjalan secara publik di Hugging Face Spaces. Kamu bisa langsung menggunakannya tanpa perlu setup server sendiri.
+
+- **Base URL**: `https://bangjhener-retinopaty-api.hf.space`
+- **Swagger UI (Docs)**: `https://bangjhener-retinopaty-api.hf.space/docs`
 
 ## 📚 API Documentation
 
 ### Endpoints
 
+Semua endpoint di bawah ini bisa diakses melalui URL lokal (`http://localhost:8000`) atau URL production di Hugging Face (`https://bangjhener-retinopaty-api.hf.space`).
+
 #### POST /predict
 Analyze retinal image and return prediction.
 
-**Request:**
+**Request (Production):**
 ```bash
-curl -X POST "http://localhost:8000/predict" \
+curl -X POST "https://bangjhener-retinopaty-api.hf.space/predict" \
   -F "file=@retina_image.jpg"
 ```
 
