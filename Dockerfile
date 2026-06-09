@@ -14,6 +14,8 @@ COPY --from=builder /install /usr/local
 COPY backend/app/ ./app/
 COPY models/ ./models/
 
+ENV MODEL_PATH=/app/models/onnx/retinal_classifier_efficientnet_b1.onnx
+
 RUN useradd -m -u 1000 appuser
 USER appuser
 
