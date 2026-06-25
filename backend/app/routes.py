@@ -1,11 +1,16 @@
 from __future__ import annotations
 
+import logging
+
 from fastapi import APIRouter, File, HTTPException, UploadFile
 
 from app.config import MODEL_PATH
 from app.inference_service import InferenceService
+from app.interpret_controller import interpret_controller
 from app.model_repo import ModelRepo
 from app.predict_controller import PredictController
+
+logger = logging.getLogger(__name__)
 
 router = APIRouter()
 
@@ -36,3 +41,22 @@ async def predict(file: UploadFile = File(...)) -> dict:
         raise HTTPException(status_code=500, detail=f"Model not loaded: {_model_error}")
 
     return await _controller.predict(file)
+
+
+@router.post("/interpret")
+async def interpret(request: dict) -> dict:
+    """RAG-augmented LLM interpretation of classification results."""
+    try:
+        return interpret_controller.interpret(request)
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+    except RuntimeError as exc:
+        msg = str(exc)
+        if "timed out" in msg.lower():
+            raise HTTPException(status_code=504, detail=msg) from exc
+        if "not configured" in msg.lower():
+            raise HTTPException(status_code=503, detail=msg) from exc
+        raise HTTPException(status_code=502, detail=msg) from exc
+    except Exception as exc:
+        logger.error("Interpret endpoint error: %s", exc, exc_info=True)
+        raise HTTPException(status_code=500, detail="Internal server error") from exc

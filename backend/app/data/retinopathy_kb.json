@@ -1,0 +1,167 @@
+[
+  {
+    "id": "DR_STAGE_001",
+    "category": "DR_stage",
+    "title": "Nonproliferative Diabetic Retinopathy (NPDR) - Mild",
+    "content": "Nonproliferative diabetic retinopathy (NPDR) mild is the earliest clinically detectable stage of diabetic retinopathy. It is characterized by the presence of microaneurysms (MAs), which are small focal dilations of retinal capillaries. The presence of at least one microaneurysm with or without hard exudates, retinal hemorrhages, or venous beading defines NPDR mild.\n\nKey clinical features:\n- Microaneurysms (MAs) are the hallmark finding, representing areas of vascular weakness and preclinical leakage\n- Hard exudates may appear as lipid deposits, typically in a circinate pattern around areas of vascular leakage\n- Cotton wool spots (CWS) may be present, representing nerve fiber layer infarcts\n- Retinal hemorrhages are dot-blot or flame-shaped, located within or superficial to the retina\n\nDiagnostic criteria (ETDRS):\n- Microaneurysms and/or retinal hemorrhages only, without venous beading or intraretinal microvascular abnormalities (IRMA)\n- Severity code: 20 (mild NPDR)\n\nProgression risk:\n- Without intervention: 25-33% progress to more severe DR within 1 year\n- With good glycemic control (HbA1c <7%): risk reduced to <10%\n\nPathophysiology:\n- Hyperglycemia causes pericyte loss leading to capillary wall weakening and microaneurysm formation\n- Early blood-retinal barrier breakdown leading to retinal edema (often clinically silent initially)\n- Inflammation and oxidative stress accelerate endothelial dysfunction\n\nManagement principles covered in MGMT section.",
+    "keywords": ["NPDR", "nonproliferative", "mild", "microaneurysm", "diabetic retinopathy", "early DR"],
+    "clinical_summary": true,
+    "patient_friendly": false,
+    "source": "AAO_guidelines_2023",
+    "language": "en"
+  },
+  {
+    "id": "DR_STAGE_002",
+    "category": "DR_stage",
+    "title": "Nonproliferative Diabetic Retinopathy (NPDR) - Moderate",
+    "content": "Nonproliferative diabetic retinopathy (NPDR) moderate represents disease progression with more extensive microvasculature changes and emerging signs of flow disturbances.\n\nDiagnostic criteria:\n- Retinal hemorrhages and microaneurysms more numerous than mild NPDR\n- Hard exudates more extensive\n- Cotton wool spots present\n- Venous beading may be absent (distinguishes from severe NPDR)\n- Intraretinal microvascular abnormalities (IRMA) may be present (early signs of nonperfusion)\n- Severity code: 35-43 (moderate NPDR per ETDRS)\n\nClinical findings:\n- Hemorrhages larger and more numerous, can be dot-blot or flame-shaped\n- Hard exudates clustered or circinate, indicating active vascular leakage\n- CWS multiple, indicating nerve fiber layer ischemia\n- IRMA: dilated, irregular capillaries in areas of nonperfusion (indicates progression)\n\nVascular pathology:\n- Progressive pericyte loss and endothelial cell apoptosis\n- Capillary nonperfusion creating hypoxic zones\n- Upregulation of vascular endothelial growth factor (VEGF) as stimulus for neovascularization\n- Blood-retinal barrier breakdown leading to increased vascular permeability\n\nDME risk:\n- Moderate NPDR carries 5-10% risk of clinically significant macular edema (CSME) at presentation\n- Risk increases to 15-25% over 3 years without intervention\n\nProgression to PDR:\n- Approximately 15-33% progress to PDR within 1-2 years if untreated\n- Risk factors: poor glycemic control, hypertension, higher baseline severity\n\nManagement: Urgent referral for comprehensive eye exam. Consider anti-VEGF or steroid therapy if DME present. Tight glucose and blood pressure control essential.",
+    "keywords": ["NPDR", "moderate", "venous beading", "IRMA", "retinal hemorrhage", "diabetic retinopathy"],
+    "clinical_summary": true,
+    "patient_friendly": false,
+    "source": "AAO_guidelines_2023",
+    "language": "en"
+  },
+  {
+    "id": "DR_STAGE_003",
+    "category": "DR_stage",
+    "title": "Nonproliferative Diabetic Retinopathy (NPDR) - Severe",
+    "content": "Nonproliferative diabetic retinopathy (NPDR) severe represents advanced ischemic retinopathy with extensive capillary nonperfusion and imminent risk of neovascularization.\n\nDiagnostic criteria (4-2-1 rule):\n- Hemorrhages and microaneurysms in all 4 quadrants of retina\n- Venous beading in 2+ quadrants (pathognomonic finding: venous dilation and segmentation)\n- Prominent intraretinal microvascular abnormalities (IRMA) in 1+ quadrant\n- ETDRS severity codes: 47-53 (severe NPDR)\n\nClinical presentation:\n- Extensive retinal hemorrhages and microaneurysms throughout periphery\n- Prominent cotton wool spots indicating extensive nerve fiber layer infarction\n- Hard exudates may form circinate patterns around macula (risk of vision loss)\n- Venous beading: most sensitive sign of extensive capillary nonperfusion\n- IRMA prominent: collateral vessels bypassing nonperfused zones\n- Macular edema often present (10-20% have clinically significant DME)\n\nIschemic pathology:\n- Extensive capillary occlusion (greater than 30% of retinal vasculature nonperfused)\n- Severe upregulation of VEGF due to widespread hypoxia\n- Breakdown of inner blood-retinal barrier leading to increased retinal edema\n- Preparation for neovascular response\n\nProgression risk:\n- 45% progress to proliferative DR (PDR) within 1 year if untreated\n- 90% progress to PDR within 2 years\n- High risk of vision-threatening complications\n\nManagement:\n- Urgent referral to retinal specialist (same week if possible)\n- Anti-VEGF therapy strongly recommended (aflibercept, ranibizumab, bevacizumab)\n- Laser photocoagulation (panretinal or scatter laser) if resources limited\n- Tight glycemic and BP control\n- Quarterly fundus exams\n- Monitor for development of PDR or DME\n\nPrognosis:\n- With prompt treatment: 50-70% do not progress to PDR\n- Without treatment: progression to PDR nearly certain within 2 years",
+    "keywords": ["NPDR severe", "venous beading", "4-2-1 rule", "extensive nonperfusion", "IRMA", "high risk PDR"],
+    "clinical_summary": true,
+    "patient_friendly": false,
+    "source": "AAO_guidelines_2023",
+    "language": "en"
+  },
+  {
+    "id": "DR_STAGE_004",
+    "category": "DR_stage",
+    "title": "Proliferative Diabetic Retinopathy (PDR)",
+    "content": "Proliferative diabetic retinopathy (PDR) is characterized by neovascularization of the disc (NVD) or neovascularization elsewhere (NVE) on the retina or optic disc. It represents the most severe form of diabetic retinopathy and carries the highest risk of vision loss.\n\nDiagnostic criteria:\n- Neovascularization of disc (NVD): abnormal vessel proliferation at optic disc margin\n- Neovascularization elsewhere (NVE): abnormal vessels on retina away from disc\n- Vitreous hemorrhage (blood obscuring retinal view) due to new vessel bleeding\n- Tractional retinal detachment: scar tissue mechanically pulling retina\n- ETDRS severity codes: 61-71 (PDR)\n\nNeovascularization characteristics:\n- New vessels are thin, fragile, and bleed easily\n- Lack normal pericyte support and are structurally weak\n- Often accompany glial proliferation (epiretinal membrane)\n- NVD carries higher risk of bleeding than NVE\n- Growth stimulated by widespread VEGF production\n\nClinical features:\n- Floaters (blood in vitreous), flashing lights (retinal traction)\n- Possible vision loss if NV bleeds or tractional detachment occurs\n- Rubeosis iridis (abnormal iris neovascularization) can develop leading to neovascular glaucoma\n- Combined DME + PDR significantly worsens prognosis\n\nVision-threatening complications:\n1. Vitreous hemorrhage: blood in gel obscures vision (can be sudden, total vision loss)\n2. Tractional retinal detachment: scar tissue pulls retina off; permanent vision loss\n3. Neovascular glaucoma: if rubeosis develops leading to elevated IOP and optic nerve damage\n\nManagement (urgent):\n- Anti-VEGF therapy: first-line (aflibercept, ranibizumab preferred)\n- Panretinal photocoagulation (PRP): if anti-VEGF unavailable or contraindicated\n- Vitrectomy: if significant vitreous hemorrhage or tractional detachment\n- Monitor for glaucoma (IOP, optic nerve)\n- Tight glucose and BP control\n- Frequent follow-up (every 1-2 weeks initially)\n\nPrognosis:\n- With prompt anti-VEGF: 50-70% achieve regression of NV\n- Without treatment: high risk of catastrophic vision loss (blindness) within 1-2 years\n- Early treatment can prevent greater than 90% of vision loss",
+    "keywords": ["PDR", "proliferative", "neovascularization", "NVD", "NVE", "vitreous hemorrhage", "high risk"],
+    "clinical_summary": true,
+    "patient_friendly": false,
+    "source": "AAO_guidelines_2023",
+    "language": "en"
+  },
+  {
+    "id": "DR_LESION_001",
+    "category": "lesion",
+    "title": "Microaneurysm in Diabetic Retinopathy",
+    "content": "Microaneurysms (MAs) are small, focal dilations of retinal capillaries, typically 15-60 micrometers in diameter. They are the earliest clinically detectable lesion of diabetic retinopathy and often the first sign of DR on screening fundus photography.\n\nHistopathology:\n- Result of pericyte (supporting cells) loss in retinal capillaries\n- Endothelial cells weaken without pericyte structural support\n- Capillary wall bulges outward leading to microaneurysm formation\n- Initially areas of microleakage (blood-retinal barrier breakdown)\n- Over time: microaneurysm may regress, perfuse, or close\n\nClinical appearance:\n- Red dots (if recently formed, filled with blood)\n- Dark spots (if thrombosed or regressed)\n- Size: typically less than 25 micrometers\n- Location: usually in inner nuclear layer\n- Distribution: commonly in posterior pole, especially around macula\n\nSignificance:\n- Marker of pericyte loss and early blood-retinal barrier dysfunction\n- Indicates disease already present (even if patient asymptomatic)\n- Precedes clinically visible DR by months to years in histologic studies\n- Multiple MAs indicate diffuse capillary disease (not localized)\n\nProgression:\n- MAs can regress, especially with improved glycemic control\n- Indicates need for intensified glucose management\n- Suggests risk of concurrent DME (often asymptomatic at MA stage)\n\nManagement implications:\n- Presence mandates referral for comprehensive eye exam\n- Assess HbA1c and optimize glycemic control\n- Screen for diabetic macular edema (OCT recommended)\n- More frequent follow-up (q3-6 months) recommended",
+    "keywords": ["microaneurysm", "MA", "pericyte loss", "earliest lesion", "diabetic retinopathy", "lesion"],
+    "clinical_summary": true,
+    "patient_friendly": false,
+    "source": "AAO_guidelines_2023",
+    "language": "en"
+  },
+  {
+    "id": "DR_LESION_002",
+    "category": "lesion",
+    "title": "Hard Exudate in Diabetic Retinopathy",
+    "content": "Hard exudates (HE) are lipid and protein deposits that accumulate in the retina secondary to vascular leakage from damaged capillaries. They are a key marker of retinal vascular leakage and indicate blood-retinal barrier dysfunction.\n\nComposition:\n- Lipoproteins, cholesterol, and plasma proteins that have leaked from capillaries\n- Accumulate in outer plexiform layer\n- Yellow-white appearance due to lipid content and light scattering\n\nClinical appearance:\n- Yellow-white spots, often with sharp margins\n- Vary in size from pinpoint to several disc diameters\n- Often arranged in circinate patterns (rings around areas of active leakage)\n- Classically appear around leaking microaneurysms or capillary dilation\n- May involve macula (threat to vision)\n\nPathophysiology:\n- Result of hyperpermeability of retinal vasculature\n- Chronically elevated intracapillary pressure pushes fluid outward\n- Damaged endothelium (from hyperglycemia, inflammation, oxidative stress)\n- VEGF and bradykinin increase vascular permeability\n- Fluid carries lipoproteins into retina leading to exudate formation\n\nPrognostic significance:\n- Indicates active microvascular disease and ongoing leakage\n- Risk factor for diabetic macular edema if close to fovea\n- Can regress with improved glycemic control\n\nClinical implications:\n- Markers of blood-retinal barrier breakdown\n- Assess with OCT if involving macula (measure retinal thickening)\n- Indicate need for glycemic optimization\n- If involving macula + thickness greater than 300 um: consider anti-VEGF/steroid therapy\n\nRegression:\n- Can resolve completely with good glycemic control\n- May take 6-12 months for complete resolution",
+    "keywords": ["hard exudate", "lipid deposit", "circinate", "macular edema", "leakage", "lesion"],
+    "clinical_summary": true,
+    "patient_friendly": false,
+    "source": "AAO_guidelines_2023",
+    "language": "en"
+  },
+  {
+    "id": "DR_LESION_003",
+    "category": "lesion",
+    "title": "Cotton Wool Spot in Diabetic Retinopathy",
+    "content": "Cotton wool spots (CWS) are white, fluffy retinal opacities located at the nerve fiber layer that represent areas of nerve fiber layer infarction (axonal disruption and cytoid body accumulation). They are a marker of localized retinal ischemia.\n\nHistopathology:\n- Result from capillary occlusion in nerve fiber layer territory\n- Blood flow interruption leading to axonal accumulation of organelles (cytoid bodies)\n- Interrupted anterograde axoplasmic flow\n- No actual necrosis (reversible if blood flow restored)\n\nClinical appearance:\n- White, fluffy, feathery opacities\n- Poorly demarcated borders (blend into surrounding retina)\n- Location: nerve fiber layer (superficial, follow blood vessel arcades)\n- Distribution: can be focal or multiple (diffuse disease)\n\nDuration:\n- Typically resolve within 6-12 weeks as axons are cleared\n- Leave no permanent scarring (unlike hemorrhages)\n- Can recur in same location (indicates chronic capillary occlusion)\n\nPathophysiology:\n- Capillary occlusion from endothelial disease or thrombosis\n- Retinal hypoxia triggers endothelial dysfunction\n- Widespread CWS indicate diffuse capillary disease\n\nClinical significance:\n- Marker of localized retinal ischemia\n- Indicates need for tight glycemic and BP control\n- Multiple CWS suggest more extensive microvascular disease\n- Not directly vision-threatening (nerve fiber layer location)\n\nManagement:\n- No specific treatment (spontaneously resolves)\n- Optimize glycemic and BP control\n- Monitor for progression of DR\n- Use as marker for intensifying diabetes management",
+    "keywords": ["cotton wool spot", "CWS", "nerve fiber layer", "ischemia", "infarction", "lesion"],
+    "clinical_summary": true,
+    "patient_friendly": false,
+    "source": "AAO_guidelines_2023",
+    "language": "en"
+  },
+  {
+    "id": "DR_DME_001",
+    "category": "lesion",
+    "title": "Diabetic Macular Edema (DME)",
+    "content": "Diabetic macular edema (DME) is retinal thickening in the macula caused by accumulation of intraretinal and subretinal fluid secondary to breakdown of the blood-retinal barrier. It is the leading cause of vision loss in working-age adults with diabetes.\n\nPathophysiology:\n- Increased vascular permeability from VEGF, bradykinin, and other inflammatory cytokines\n- Capillary occlusion and ischemia trigger VEGF release\n- Loss of tight junction proteins (occludin, claudins) in endothelium\n- Fluid accumulates in outer plexiform layer and other retinal layers\n\nClinical presentation:\n- Often asymptomatic initially (center-sparing macular edema)\n- Blurred vision, metamorphopsia (distorted vision) if fovea involved\n- Difficulty reading fine print\n- Visual acuity may range from normal to severe loss\n\nDiagnostic criteria:\n- Retinal thickening: OCT thickness greater than 300 um at foveal center\n- Microthickening: 250-300 um (borderline, monitor closely)\n\nStaging severity:\n- Mild: 300-400 um, no foveal involvement\n- Moderate: 400-600 um, foveal involvement possible\n- Severe: greater than 600 um, significant foveal distortion\n\nManagement (urgent if center-involved):\n- Anti-VEGF therapy (aflibercept, ranibizumab, bevacizumab): first-line\n- Intravitreal steroid (triamcinolone, dexamethasone implant): if anti-VEGF inadequate\n- Laser photocoagulation: less effective than anti-VEGF, but option if unavailable\n- Intensive glycemic and BP control\n- Frequent monitoring (monthly initially) with OCT\n\nProgression timeline:\n- DME can develop at any DR stage\n- With treatment: 60-80% improve; 20-40% maintain or worsen\n\nRisk factors for poor prognosis:\n- Severe disruption of ellipsoid zone\n- Subretinal fluid\n- Lipid deposits (hard exudates) involving fovea\n- Chronic duration (greater than 6 months)",
+    "keywords": ["DME", "macular edema", "vision loss", "OCT", "anti-VEGF", "treatment", "lesion"],
+    "clinical_summary": true,
+    "patient_friendly": false,
+    "source": "AAO_guidelines_2023",
+    "language": "en"
+  },
+  {
+    "id": "MGMT_001",
+    "category": "management",
+    "title": "Glycemic Control and DR Prevention",
+    "content": "Tight glycemic control is the cornerstone of diabetic retinopathy prevention and progression slowing.\n\nEvidence basis:\n- DCCT: 3-year intensive glycemic control reduced DR incidence by 76% in type 1 diabetes\n- UKPDS: 10-year follow-up showed 21% reduction in retinopathy with each 1% reduction in HbA1c\n- Each 1% higher HbA1c associated with approximately 18% increased DR risk\n\nTarget HbA1c for DR prevention:\n- General target: less than 7% for most patients\n- Intensified target: less than 6.5% for patients with early DR (can slow/reverse early lesions)\n\nGlycemic control intensity and DR regression:\n- Mild NPDR: 50-70% regress to normal retinal findings with HbA1c less than 7% for 1-2 years\n- Hard exudates: improve with sustained good control\n- Microaneurysms: can regress rapidly with intensive control\n- PDR: already advanced, cannot regress with glucose control alone (requires anti-VEGF/PRP)\n\nDR screening intervals based on glycemic control:\n- HbA1c less than 7%, no DR: annual screening\n- HbA1c 7-9%: every 6-9 months\n- HbA1c greater than 9%: every 3-6 months\n\nImplementation strategies:\n- Basal-bolus insulin or insulin pump for type 1 diabetes\n- GLP-1 agonists (weight loss benefit, cardiovascular benefit) preferred for type 2\n- SGLT2 inhibitors (renal protection): secondary benefit\n- Continuous glucose monitoring (CGM) helps identify patterns",
+    "keywords": ["glycemic control", "HbA1c", "prevention", "management", "DCCT", "UKPDS"],
+    "clinical_summary": true,
+    "patient_friendly": false,
+    "source": "AAO_guidelines_2023",
+    "language": "en"
+  },
+  {
+    "id": "MGMT_002",
+    "category": "management",
+    "title": "Blood Pressure Control in Diabetic Retinopathy",
+    "content": "Hypertension accelerates diabetic retinopathy progression and increases risk of vision-threatening complications. Blood pressure management is essential for DR prevention and slowing progression.\n\nEpidemiology:\n- Hypertension present in 80% of type 2 diabetics, 50% of type 1 diabetics\n- Hypertension doubles risk of DR development\n- Hypertension increases DR progression risk 3-fold\n\nMechanism:\n- Elevated intraglomerular and intracapillary pressure\n- Capillary endothelial dysfunction and blood-retinal barrier breakdown\n- Increased VEGF production\n- Acceleration of pericyte loss and capillary occlusion\n\nBlood pressure targets for DR patients:\n- General diabetic population: less than 130/80 mmHg\n- With DR: less than 130/80 mmHg (tight control recommended)\n- With nephropathy: less than 120/80 mmHg\n\nAnti-hypertensive drugs and DR:\n- ACE inhibitors and ARBs: first-line (renal protection, VEGF modulation)\n- Beta-blockers: useful if coexistent coronary disease\n- Calcium channel blockers: useful for resistant hypertension\n- Avoid: NSAIDs (worsen diabetic nephropathy and retinopathy)\n\nManagement strategy:\n- Home BP monitoring\n- Lifestyle: sodium restriction, weight loss, exercise, stress reduction\n- Medication optimization: uptitrate to target, assess adherence\n- Annual retinal screening even if BP well-controlled",
+    "keywords": ["blood pressure", "hypertension", "management", "ACE inhibitor", "ARB", "BP target"],
+    "clinical_summary": true,
+    "patient_friendly": false,
+    "source": "AAO_guidelines_2023",
+    "language": "en"
+  },
+  {
+    "id": "MGMT_003",
+    "category": "management",
+    "title": "Anti-Vascular Endothelial Growth Factor (Anti-VEGF) Therapy",
+    "content": "Anti-VEGF agents are the most effective treatment for diabetic retinopathy complications, particularly for DME and PDR.\n\nMechanism of action:\n- VEGF promotes vascular permeability (DME), neovascularization (PDR), and inflammation\n- Anti-VEGF agents bind VEGF-A and prevent interaction with VEGFR1/VEGFR2\n- Results: reduced vascular leakage, regression of new vessels, reduced inflammation\n- Onset: 2-4 weeks for maximum effect; peak effect at 8-12 weeks\n\nAvailable agents:\n- Aflibercept (Eylea): 2 mg/0.05mL, most potent, binds VEGF-A/PlGF\n- Ranibizumab (Lucentis): 0.5 mg/0.05mL, humanized antibody fragment\n- Bevacizumab (Avastin): 1.25 mg/0.05mL, off-label, cost-effective\n\nIndications:\n- DME (center-involved): first-line treatment\n- PDR with NVD/NVE: especially if vision-threatening\n- NPDR severe (off-label, emerging evidence)\n\nDosing regimen:\n- Loading phase: 3 monthly injections\n- Maintenance phase: variable frequency based on response (4-12 week intervals)\n- Treat-and-extend: gradually extend intervals as long as stable\n\nEfficacy:\n- DME: 65-80% improve VA by 3 or more lines of vision\n- Macular thickness reduction: average 100-200 um\n- PDR: 50-70% achieve regression of neovascularization\n\nSide effects:\n- Injection-related: temporary floaters, minimal vision loss (less than 1% serious complication)\n- Systemic: rare with intravitreal administration\n- Retinal detachment: rare, more common in high myopia\n\nContraindications:\n- Active ocular infection: defer until resolved\n- Recent intraocular surgery: may defer 4 weeks\n- Relative: pregnancy (avoid due to unknown teratogenicity)",
+    "keywords": ["anti-VEGF", "aflibercept", "ranibizumab", "bevacizumab", "DME", "PDR", "treatment"],
+    "clinical_summary": true,
+    "patient_friendly": false,
+    "source": "AAO_guidelines_2023",
+    "language": "en"
+  },
+  {
+    "id": "HRET_001",
+    "category": "hypertensive_ret",
+    "title": "Hypertensive Retinopathy Stages",
+    "content": "Hypertensive retinopathy reflects acute or chronic vascular changes from elevated blood pressure. Severity correlates with blood pressure elevation and underlying end-organ damage.\n\nStaging (Keith-Wagener-Barker):\nGrade 1 (mild):\n- Generalized narrowing of arterioles\n- Copper-wire appearance (bright, narrowed arteries)\n- No exudates or hemorrhages\n- Usually no symptoms\n\nGrade 2 (moderate):\n- Arteriovenous nicking (compression of veins by arteries)\n- Copper-wire arterioles\n- Flame-shaped hemorrhages\n- Cotton wool spots\n- Hard exudates (may circinate)\n\nGrade 3 (severe):\n- All grade 2 findings plus papilledema (optic disc swelling)\n- Retinal hemorrhages (flame, dot-blot)\n- Soft exudates (cotton wool spots) numerous\n- Macular star: characteristic circinate lipid pattern around macula\n- Indicates hypertensive emergency\n\nGrade 4 (malignant):\n- All grade 3 findings plus severe papilledema\n- Retinal whitening (retinal edema)\n- Hemorrhages and microinfarcts\n- Requires immediate treatment\n\nManagement:\n- Grade 1-2: control BP with medications, monitor quarterly\n- Grade 3-4: urgent BP reduction (target less than 160/110 in ER, less than 130/80 over days-weeks)\n- Papilledema indicates CNS involvement; coordinate with neurology\n- Prognosis with treatment: reversal of retinal findings over weeks-months",
+    "keywords": ["hypertensive retinopathy", "papilledema", "Keith-Wagener", "grade", "hemorrhage", "management"],
+    "clinical_summary": true,
+    "patient_friendly": false,
+    "source": "AAO_general_ophthalmology",
+    "language": "en"
+  },
+  {
+    "id": "ROP_001",
+    "category": "ROP",
+    "title": "Retinopathy of Prematurity (ROP) - Overview",
+    "content": "Retinopathy of prematurity (ROP) is an abnormal retinal vascularization that occurs in premature infants. It is the leading preventable cause of childhood blindness globally.\n\nRisk factors:\n- Gestational age less than 32 weeks (highest risk less than 28 weeks)\n- Birth weight less than 1500g (highest risk less than 1000g)\n- High oxygen exposure (supplemental O2, especially unregulated)\n- Sepsis, intraventricular hemorrhage, respiratory distress\n\nPathophysiology two-phase model:\nPhase 1 (vaso-obliteration):\n- High oxygen levels suppress VEGF\n- Cessation of normal retinal vascularization\n- Avascular (non-vascularized) retina develops\n\nPhase 2 (vaso-proliferation):\n- Relative hypoxia in growing retina\n- Surge in VEGF production\n- Abnormal neovascularization develops (tortuous vessels, ridges)\n- Risk of retinal detachment and blindness\n\nStaging (International Classification):\n- Zone 1-3: location (zone 1 closest to optic nerve, zone 3 most peripheral)\n- Stage 1-5: severity (stage 1 minimal; stage 5 total retinal detachment, blindness)\n\nScreening and management:\n- Screen all infants less than 30 weeks gestation and/or less than 1500g birth weight\n- Anti-VEGF therapy (bevacizumab, aflibercept) emerging as effective\n- Laser photocoagulation if regression of neovascularization\n- Vitrectomy if retinal detachment\n- Prognosis: with early detection and treatment, 90% avoid blindness\n\nPrevention:\n- Oxygen saturation targets: 90-95% (avoid both hypoxia and hyperoxia)\n- Regular screening by pediatric retina specialist",
+    "keywords": ["ROP", "prematurity", "neovascularization", "retinal detachment", "screening", "anti-VEGF"],
+    "clinical_summary": true,
+    "patient_friendly": false,
+    "source": "AAO_general_ophthalmology",
+    "language": "en"
+  },
+  {
+    "id": "PATEDU_001",
+    "category": "patient_ed",
+    "title": "Understanding Diabetic Retinopathy (Patient Education)",
+    "content": "Diabetic retinopathy (DR) is eye disease that happens when diabetes damages the tiny blood vessels in the back of your eye (the retina). This is one of the most common complications of diabetes, but it can often be prevented or slowed with good diabetes care.\n\nHow does diabetes harm the eyes?\nWhen your blood sugar stays too high for a long time, it damages the small blood vessels in your retina. The retina is the part of your eye that captures light and sends images to your brain so you can see. When these blood vessels are damaged:\n- They can leak fluid or blood into the eye\n- New, weak blood vessels may grow in the wrong places\n- Scar tissue can form and pull the retina out of place\n\nWhy does not it hurt?\nDiabetic retinopathy usually does not hurt and may not cause any symptoms in early stages. This is why regular eye exams are so important.\n\nEarly signs:\n- Blurry vision (comes and goes)\n- Floaters (dark spots or squiggly lines in your vision)\n- Eye pain (if advanced)\n- Blank or dark spots in your vision (if severe)\n\nStages of diabetic retinopathy:\n1. Early stage (nonproliferative): tiny leaks in blood vessels, little to no vision change\n2. More advanced stage: more bleeding, fluid buildup, possible vision blurring\n3. Severe stage: many new, weak blood vessels growing, higher risk of vision loss\n4. Most severe (proliferative): new vessels very active, high risk of blindness if untreated\n\nHow to prevent or slow it:\n1. Keep your blood sugar as close to normal as possible\n2. Control your blood pressure (high BP speeds up eye damage)\n3. Get regular dilated eye exams (at least once a year, more often if DR found)\n4. Take diabetes medicines exactly as prescribed\n5. Eat healthy, exercise, and maintain a healthy weight\n6. Don't smoke (smoking makes DR worse)",
+    "keywords": ["diabetic retinopathy", "patient education", "blood sugar", "eye damage", "prevention"],
+    "clinical_summary": false,
+    "patient_friendly": true,
+    "source": "patient_education",
+    "language": "en"
+  },
+  {
+    "id": "PATEDU_002",
+    "category": "patient_ed",
+    "title": "Living with Diabetic Retinopathy: What to Expect",
+    "content": "If you have been told you have diabetic retinopathy, you may feel worried or scared. The good news is that with proper treatment and care, most people are able to keep their vision and prevent blindness.\n\nWhat to expect after diagnosis:\n1. More frequent eye doctor visits (possibly monthly or quarterly)\n2. Frequent retinal imaging (photos or OCT scans)\n3. Possible treatment\n4. Closer monitoring of your blood sugar and blood pressure\n5. Lifestyle changes (diet, exercise, medication compliance)\n\nTypes of treatment:\n\nEye injections (anti-VEGF):\n- Medicine injected directly into your eye (monthly initially)\n- Safe and commonly used\n- Works by reducing swelling and preventing abnormal blood vessel growth\n- Vision usually improves within weeks\n\nLaser treatment:\n- Heat beam applied to retina to seal leaking blood vessels\n- Usually outpatient (1-2 hours)\n- Protects remaining vision but does not restore lost vision\n\nSurgery (vitrectomy):\n- Removal of gel (vitreous) from inside eye if severe bleeding\n- Usually for advanced cases\n- Allows retina to be treated and reattached if needed\n\nLifestyle changes you can make:\n1. Blood sugar control: check blood sugar as recommended, take medicines every day, eat healthy meals, target HbA1c less than 7%\n2. Blood pressure control: take medicine every day, limit salt, maintain healthy weight, target less than 130/80 mmHg\n3. Exercise 30 minutes 5 days per week, do not smoke, limit alcohol\n4. Attend all eye appointments, wear protective sunglasses\n\nWhen to call your eye doctor immediately:\n- Sudden blurry vision\n- Sudden onset of floaters or flashing lights\n- Pain in the eye\n- Feeling like a curtain or shadow across your vision\n- Sudden loss of vision\n\nEmotional support: It is normal to feel worried or depressed after a DR diagnosis. Talk to your doctor about resources. With modern treatments, blindness from DR is now preventable in most cases.",
+    "keywords": ["patient education", "treatment options", "lifestyle changes", "follow-up", "support"],
+    "clinical_summary": false,
+    "patient_friendly": true,
+    "source": "patient_education",
+    "language": "en"
+  }
+]

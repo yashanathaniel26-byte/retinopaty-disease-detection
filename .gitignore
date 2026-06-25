@@ -72,3 +72,6 @@ Thumbs.db
 # models/*.h5
 # models/*.pkl
 # models/*.pt
+
+# RAG cache
+backend/app/data/kb_embeddings_cache.json

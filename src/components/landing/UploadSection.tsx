@@ -2,19 +2,9 @@
 
 import { useMemo, useState } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-
-type Prediction = {
-  class_index: number;
-  label: string;
-  confidence: number;
-};
-
-type PredictResponse = {
-  class_index: number;
-  label: string;
-  confidence: number;
-  top_5: Prediction[];
-};
+import type { PredictResponse } from "@/types/classification";
+import { LOW_CONFIDENCE_THRESHOLD } from "@/lib/risk";
+import ResultsTabs from "@/components/results/ResultsTabs";
 
 const API_URL =
   process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
@@ -22,47 +12,6 @@ const API_URL =
 const ALLOWED_MIME_TYPES = new Set(["image/jpeg", "image/png", "image/jpg"]);
 const ALLOWED_EXTENSIONS = [".jpg", ".jpeg", ".png"];
 const MAX_FILE_SIZE_BYTES = 10 * 1024 * 1024;
-const LOW_CONFIDENCE_THRESHOLD = 0.8;
-
-const RECOMMENDATIONS: Record<string, string> = {
-  normal: "Tidak ditemukan temuan mencurigakan. Lanjutkan pemeriksaan rutin.",
-  "macular-scar":
-    "Sarankan evaluasi lanjutan untuk memastikan dampak pada ketajaman visual.",
-  pterygium: "Anjurkan pemantauan ukuran dan konsultasi bila iritasi meningkat.",
-  "disc-edema":
-    "Perlu rujukan segera untuk evaluasi tekanan intrakranial dan saraf optik.",
-  "branch-retinal-vein-occlusion":
-    "Sarankan konsultasi retina untuk terapi dan pemantauan edema makula.",
-  "central-serous-chorioretinopathy":
-    "Pertimbangkan evaluasi faktor stres dan tindak lanjut retina.",
-  drusen: "Rekomendasikan kontrol berkala untuk memantau progresi makula.",
-  glaucoma: "Sarankan pemeriksaan tekanan intraokular dan lapang pandang.",
-  "retinal-detachment":
-    "Rujuk segera ke spesialis retina untuk penanganan darurat.",
-  "diabetic-retinopathy-severe":
-    "Perlu rujukan segera untuk penilaian laser atau terapi anti-VEGF.",
-  "age-macular-degeneration":
-    "Sarankan evaluasi retina dan edukasi perubahan gaya hidup.",
-  cataract: "Pertimbangkan evaluasi bedah katarak bila penglihatan terganggu.",
-  "diabetic-retinopathy-mild":
-    "Anjurkan kontrol gula darah dan follow-up retina berkala.",
-  "retinitis-pigmentosa":
-    "Sarankan konseling genetika dan monitoring progresif.",
-  "macular-epiretinal-membrane":
-    "Pertimbangkan konsultasi untuk penilaian kebutuhan tindakan bedah.",
-  myopia: "Anjurkan pemantauan perubahan fundus dan koreksi refraksi.",
-  "diabetic-retinopathy-proliferative":
-    "Rujuk segera untuk evaluasi tindakan laser/anti-VEGF.",
-  "refractive-media-opacity":
-    "Sarankan pemeriksaan penyebab kekeruhan media refraksi.",
-  "macular-hole":
-    "Perlu evaluasi retina untuk penentuan penanganan bedah.",
-};
-
-const formatLabel = (value: string) =>
-  value
-    .replace(/-/g, " ")
-    .replace(/\b\w/g, (char) => char.toUpperCase());
 
 export default function UploadSection() {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
@@ -254,68 +203,15 @@ export default function UploadSection() {
             </div>
           ) : null}
 
-          {result ? (
-            <div
-              className={`mt-3 rounded-xl border px-4 py-4 text-sm sm:mt-4 sm:rounded-2xl ${
-                result.confidence < LOW_CONFIDENCE_THRESHOLD
-                  ? "border-amber-200 bg-amber-50/70 text-amber-900"
-                  : "border-emerald-200 bg-emerald-50/70 text-emerald-900"
-              }`}
-            >
-              {result.confidence < LOW_CONFIDENCE_THRESHOLD ? (
-                <p className="mb-1 text-sm text-amber-800">
-                  Sepertinya kamu mengupload gambar yang salah. Input harus berupa
-                  fundus image agar hasilnya akurat.
-                </p>
-              ) : null}
-              {result.confidence >= LOW_CONFIDENCE_THRESHOLD ? (
-                <>
-                  <div className="flex flex-wrap items-center justify-between gap-2">
-                    <div>
-                      <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 sm:text-xs">
-                        Hasil Prediksi
-                      </p>
-                      <p className="mt-1 text-base font-semibold text-emerald-900 sm:text-lg">
-                        {formatLabel(result.label)}
-                      </p>
-                    </div>
-                    <div className="text-right text-emerald-900">
-                      <p className="text-[10px] uppercase tracking-[0.2em] sm:text-xs">Persentase</p>
-                      <p className="text-base font-semibold sm:text-lg">
-                        {(result.confidence * 100).toFixed(2)}%
-                      </p>
-                    </div>
-                  </div>
-                  <div className="mt-3 rounded-xl bg-white/80 px-3 py-3 text-sm text-slate-700">
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 sm:text-xs">
-                      Rekomendasi
-                    </p>
-                    <p className="mt-1">
-                      {RECOMMENDATIONS[result.label] ??
-                        "Disarankan konsultasi lanjutan dengan tenaga medis."}
-                    </p>
-                    <div className="mt-2 text-xs text-slate-500">
-                      Waktu inferensi: {inferenceTime ?? "-"}
-                    </div>
-                  </div>
-                  <div className="mt-3 grid gap-1.5 sm:gap-2">
-                    {result.top_5.map((item) => (
-                      <div
-                        key={`${item.label}-${item.class_index}`}
-                        className="flex items-center justify-between rounded-xl bg-white/80 px-3 py-2"
-                      >
-                        <span className="text-xs text-slate-700 sm:text-sm">
-                          {formatLabel(item.label)}
-                        </span>
-                        <span className="text-xs font-semibold text-emerald-800 sm:text-sm">
-                          {(item.confidence * 100).toFixed(2)}%
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </>
-              ) : null}
+          {result?.confidence && result.confidence < LOW_CONFIDENCE_THRESHOLD ? (
+            <div className="mt-3 rounded-xl border border-amber-200 bg-amber-50/70 px-4 py-3 text-sm text-amber-800 sm:mt-4 sm:rounded-2xl">
+              Sepertinya kamu mengupload gambar yang salah. Input harus berupa
+              fundus image agar hasilnya akurat.
             </div>
+          ) : null}
+
+          {result ? (
+            <ResultsTabs result={result} inferenceTime={inferenceTime} />
           ) : null}
         </div>
       </div>
