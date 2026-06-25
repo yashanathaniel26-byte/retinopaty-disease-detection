@@ -15,8 +15,11 @@ COPY backend/app/ ./app/
 COPY models/ ./models/
 
 ENV MODEL_PATH=/app/models/onnx/retinal_classifier_efficientnet_b1.onnx
+ENV KB_PATH=/app/app/data/retinopathy_kb.json
+ENV KB_CACHE_PATH=/app/app/data/kb_embeddings_cache.json
 
 RUN useradd -m -u 1000 appuser
+RUN chown -R appuser:appuser /app
 USER appuser
 
 EXPOSE 7860
