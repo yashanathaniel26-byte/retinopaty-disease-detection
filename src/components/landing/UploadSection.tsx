@@ -209,12 +209,15 @@ export default function UploadSection() {
               fundus image agar hasilnya akurat.
             </div>
           ) : null}
-
-          {result ? (
-            <ResultsTabs result={result} inferenceTime={inferenceTime} />
-          ) : null}
         </div>
       </div>
+
+      {/* Results — full-width, separate row below the upload card */}
+      {result ? (
+        <div className="mt-6 sm:mt-8">
+          <ResultsTabs result={result} inferenceTime={inferenceTime} />
+        </div>
+      ) : null}
     </section>
   );
 }
