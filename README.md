@@ -1,3 +1,14 @@
+---
+title: Retinopathy API
+description: AI-powered retinal disease screening with deep learning
+emoji: 👁️
+colorFrom: blue
+colorTo: purple
+sdk: docker
+app_port: 7860
+pinned: false
+---
+
 # Retinopathy Disease Detection
 
 AI-powered retinal disease screening system dengan analisis citra fundus menggunakan deep learning. Aplikasi ini menyediakan screening otomatis untuk deteksi dini retinopati dan kondisi mata lainnya.
