@@ -8,8 +8,7 @@ client = TestClient(app)
 
 
 def _sample_image_path() -> Path:
-    repo_root = Path(__file__).resolve().parents[2]
-    return repo_root / "Drusen.jpeg"
+    return Path(__file__).resolve().parent / "fixtures" / "Drusen.jpeg"
 
 
 def test_health_ok():

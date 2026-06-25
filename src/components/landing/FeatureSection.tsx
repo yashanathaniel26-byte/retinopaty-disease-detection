@@ -1,7 +1,7 @@
 "use client";
 
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import FeatureWobbleCards from "@/components/FeatureWobbleCards";
+import FeatureWobbleCards from "@/components/landing/FeatureWobbleCards";
 
 export default function FeatureSection() {
   const { ref: headRef, isVisible: headVisible } = useScrollReveal();
